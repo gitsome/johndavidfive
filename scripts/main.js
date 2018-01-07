@@ -19,11 +19,14 @@ var main = {};
         });
 
         // cross browser scroll to function
-        var scrollTo = function (targetTopOffset, duration) {
+        var scrollTo = function (targetTopOffset, duration, callBack) {
+
+            callBack = callBack || $.noop;
+
             if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                $('body').animate({ scrollTop: targetTopOffset}, duration);
+                $('body').animate({ scrollTop: targetTopOffset}, duration, callBack);
             } else {
-                $('html,body').animate({ scrollTop: targetTopOffset}, duration);
+                $('html,body').animate({ scrollTop: targetTopOffset}, duration, callBack);
             }
         };
 
@@ -38,7 +41,10 @@ var main = {};
             var element = $(this);
             var target = $(element.attr('data-target'));
 
-            scrollTo(target.offset().top, 900);
+            scrollTo(target.offset().top, 900, function () {
+                target.attr('tabindex', '-1');
+                target.focus();
+            });
         });
 
         // update the mastery items
@@ -54,14 +60,12 @@ var main = {};
         });
 
         // use the Waypoint library to show the mastery items
-        $('.skill-set-group').each(function() {
-            new Waypoint({
-                element: this,
-                offset: '50%',
-                handler: function (direction, callee, symbol) {
-                    $(this.element).addClass('show-group');
-                }
-            });
+        var skillsWaypoint = new Waypoint({
+            element: $('.skill-set-group-row'),
+            offset: '50%',
+            handler: function (direction, callee, symbol) {
+                $(this.element).addClass('show-groups');
+            }
         });
 
         // use the Waypoint library to show and hide the Back to Top button

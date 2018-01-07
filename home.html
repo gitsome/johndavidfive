@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
 
@@ -48,6 +48,7 @@
         <script src="lib/d3/d3.min.js"></script>
         <script src="lib/waypoints/waypoints.js"></script>
         <script src="lib/three.js/build/three.min.js"></script>
+        <script src="lib/requestAnimationFrame.js"></script>
 
         <!-- APP SCRIPTS -->
         <script src="shaderScripts/plaid.shader.js"></script>
@@ -61,11 +62,11 @@
 
         <!--============ MAIN CONTENT ============-->
 
-        <span class="back-to-top">
-            <i class="fa fa-arrow-up"></i>
-        </span>
-
         <header>
+
+            <span class="back-to-top">
+                <i class="fa fa-arrow-up"></i>
+            </span>
 
             <div class="container-fluid">
 
@@ -89,7 +90,7 @@
 
         </header>
 
-        <nav class="nav-container">
+        <div class="nav-container">
 
             <div class="container-fluid">
                 <div class="row">
@@ -97,16 +98,16 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
+                                <nav class="col-md-12">
 
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-profile">Profile</a>
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-experience">Experience</a>
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-projects">Projects</a>
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-skills">Skills</a>
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-education">Education</a>
-                                    <a type="button" class="btn btn-default nav-button" data-target=".section-presentations">Presentations & Articles</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-profile">Profile</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-experience">Experience</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-projects">Projects</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-skills">Skills</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-education">Education</a>
+                                    <a type="button" href="#" class="btn btn-default nav-button" data-target=".section-presentations">Presentations & Articles</a>
 
-                                </div>
+                                </nav>
                             </div>
                         </div>
 
@@ -114,9 +115,9 @@
                 </div>
             </div>
 
-        </nav>
+        </div>
 
-        <div class="sections">
+        <main class="sections">
 
             <section class="first-section section-profile">
 
@@ -169,19 +170,19 @@
                                             <span class="contact-icon-holder">
                                                 <i class="fa fa-twitter contact-icon"></i>
                                             </span>
-                                            <span class="contact-text">@johndavidfive</span>
+                                            <span class="contact-text"><span class="sr-only">Twitter Account</span> @johndavidfive</span>
                                         </a>
                                         <a class="contact" href="https://github.com/gitsome" target="_blank">
                                             <span class="contact-icon-holder">
                                                 <i class="fa fa-github contact-icon"></i>
                                             </span>
-                                            <span class="contact-text">@gitsome</span>
+                                            <span class="contact-text"><span class="sr-only">Github Account</span>@gitsome</span>
                                         </a>
                                         <a class="contact" href="mailto:johndavidfive@mgail.com" target="_blank">
                                             <span class="contact-icon-holder">
                                                 <i class="fa fa-envelope contact-icon"></i>
                                             </span>
-                                            <span class="contact-text">johndavidfive@gmail.com</span>
+                                            <span class="contact-text"><span class="sr-only">Email</span>johndavidfive@gmail.com</span>
                                         </a>
 
                                     </div>
@@ -340,29 +341,28 @@
             <section class="section-skills">
 
                 <div class="container-fluid">
+
                     <div class="row">
                         <div class="col-sm-12">
-
                             <h3>Skills</h3>
-
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row skill-set-group-row">
                         <div class="col-md-6 skill-set-groups-frontend">
 
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-1">
                                         <h4>Client Side Technology</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">HTML 5</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">HTML 5</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -370,8 +370,8 @@
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">CSS 3</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">CSS 3</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -379,8 +379,8 @@
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">JavaScript</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">JavaScript</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -394,15 +394,15 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-1">
                                         <h4>Client Side Frameworks</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Angular</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Angular</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
@@ -410,16 +410,16 @@
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">React</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">React</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">AngularJS</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">AngularJS</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -432,63 +432,63 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-1">
                                         <h4>Client Side Libraries</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">D3.js</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">D3.js</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="75"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Underscore</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Underscore</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Three.js</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Three.js</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="75"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">LESS pre-processor</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">LESS pre-processor</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">SASS pre-processor</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">SASS pre-processor</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Bootstrap 3.x, 4.x</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Bootstrap 3.x, 4.x</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">jQuery</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">jQuery</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -501,31 +501,31 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-1">
                                         <h4>Build Tools</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">WebPack</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">WebPack</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Gulp</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Gulp</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="75"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Grunt</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Grunt</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -538,31 +538,31 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-1">
                                         <h4>Design</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Sketch</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Sketch</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Photoshop</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Photoshop</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="75"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Illustrator</span>
-                                        <span class="col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Illustrator</span>
+                                        <span class="col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
@@ -578,15 +578,15 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-0 col-xs-10 col-xs-offset-1">
                                         <h4>Server Side</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">NodeJS / Express</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">NodeJS / Express</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="100"></span>
                                             </span>
@@ -594,16 +594,16 @@
 
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Java & Spring Boot</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Java & Spring Boot</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">PHP</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">PHP</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
@@ -616,31 +616,31 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-0 col-xs-10 col-xs-offset-1">
                                         <h4>Data Analytics</h4>
                                     </div>
                                 </div>
 
                                 <ul class="skills-list">
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Python</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Python</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="85"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">TensorFlow</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">TensorFlow</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Apache Spark</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Apache Spark</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
@@ -653,7 +653,7 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-0 col-xs-10 col-xs-offset-1">
                                         <h4>Persistance</h4>
                                     </div>
                                 </div>
@@ -661,16 +661,16 @@
                                 <ul class="skills-list">
 
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">MySQL / Postgres</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">MySQL / Postgres</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Neo4J</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Neo4J</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
@@ -678,16 +678,16 @@
 
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">MongoDB</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">MongoDB</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Elasticsearch</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Elasticsearch</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
@@ -701,7 +701,7 @@
                             <div class="skill-set-group">
 
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-8 col-md-offset-0 col-xs-10 col-xs-offset-1">
                                         <h4>Dev Ops</h4>
                                     </div>
                                 </div>
@@ -709,32 +709,32 @@
                                 <ul class="skills-list">
 
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Linux / Command Line</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Linux / Command Line</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">AWS</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">AWS</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="25"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">Docker</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">Docker</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="50"></span>
                                             </span>
                                         </span>
                                     </li>
                                     <li class="skills-list-skill row">
-                                        <span class="col-sm-push-8 col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10 title">GIT</span>
-                                        <span class="col-sm-pull-4 col-sm-8 col-sm-offset-0 col-xs-offset-1 col-xs-10 percent">
+                                        <span class="col-md-push-8 col-md-4 col-md-offset-0 col-xs-offset-1 col-xs-10 title">GIT</span>
+                                        <span class="col-md-pull-4 col-md-8 col-md-offset-0 col-xs-offset-1 col-xs-10 percent">
                                             <span class="skills-list-skill-bar-wrapper">
                                                 <span class="skills-list-skill-bar" data-mastery-percent="75"></span>
                                             </span>
@@ -917,7 +917,7 @@
 
             </section>
 
-        </div>
+        </main>
 
         <footer>
 

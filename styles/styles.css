@@ -7,6 +7,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-size: 16px;
+    background: #666;
 }
 
 a {
@@ -455,22 +456,21 @@ a.project {
 }
 
 .skill-set-group {
+    margin-top: 15px;
+    margin-bottom: 45px;
+}
+
+.skill-set-group-row {
 
     opacity: 0.0;
 
-    margin-top: 15px;
-    margin-bottom: 45px;
-
-    -webkit-transition: all 450ms ease;
-    -moz-transition: all 450ms ease;
-    -o-transition: all 450ms ease;
-    transition: all 450ms ease;
-
-    transform: translate3d(0, 40px, 0);
+    -webkit-transition: all 600ms ease-out;
+    -moz-transition: all 600ms ease-out;
+    -o-transition: all 600ms ease-out;
+    transition: all 600ms ease-out;
 }
-.skill-set-group.show-group{
+.skill-set-group-row.show-groups{
     opacity: 1.0;
-    transform: translate3d(0, 0px, 0);
 }
 
 .skill-set-group h4 {
@@ -643,6 +643,16 @@ footer a:active {
         padding: 60px 90px;
         font-size: 125%;
     }
+
+    .skills-list-skill {
+        margin-bottom: 0px;
+    }
+    .skill-set-groups-frontend .skills-list-skill .title, .skill-set-groups-frontend h4  {
+        text-align: left;
+    }
+    .skill-set-groups-backend .skills-list-skill .title, .skill-set-groups-backend h4  {
+        text-align: right;
+    }
 }
 
 @media (max-width: 768px) {
@@ -732,9 +742,6 @@ footer a:active {
         font-size: 40px;
     }
 
-    .skills-list-skill {
-        margin-bottom: 0px;
-    }
     .skill-set-group h4 {
         font-size: 125%;
     }
@@ -744,14 +751,6 @@ footer a:active {
     .skills-list-skill .title {
         font-size: 75%;
     }
-
-    .skill-set-groups-frontend .skills-list-skill .title {
-        text-align: left;
-    }
-    .skill-set-groups-backend .skills-list-skill .title {
-        text-align: right;
-    }
-
 
     footer {
         font-size: 200%;

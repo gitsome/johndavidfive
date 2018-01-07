@@ -39,6 +39,10 @@ var CanvasBackground;
             .domain([0, 0.5, 1])
             .range([0, -Math.PI / 8, 0]);
 
+        var doRender = function () {
+            renderer.render(scene, camera);
+        };
+
         // here is the main logic for updating the camera position and the verticalOffset uniform that is passed to the custom shaders
         // what's nice is the webgl context only renders when this method is called so no constant GPU hogging
         var vertPercentScrolled;
@@ -59,7 +63,9 @@ var CanvasBackground;
             cameraPoinLight.position.y = camera.position.y;
             cameraPoinLight.position.x = camera.position.x;
 
-            renderer.render(scene, camera);
+            // wrap the do render here, that way we have as much time as possible to render the scene after the request animation frame callback runs
+            // not doing this can cause rendering to occur and push back the next frame which can cause a frame drop
+            requestAnimationFrame(doRender);
         };
 
         var scrollPositionUpdated = function () {
