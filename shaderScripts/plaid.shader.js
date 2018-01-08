@@ -145,7 +145,7 @@ THREE.ShaderLib['plaid'] = {
         // our main plaid colors
         vec4 mainColor = vec4(0.0, 0.0, 0.0, 0.5);
         vec4 altColor = vec4(0.0, 1.0, 0.56471, 0.5);
-        vec4 emptyColor = vec4(1.0, 1.0, 1.0, 1.0);
+        vec4 emptyColor = vec4(1.0, 1.0, 1.0, 0.5);
 
         // method that takes a percentage of the plaid pattern and returns the proper color
         // this logic is used in both directions. it is this logic that determines the plaid pattern
@@ -214,7 +214,7 @@ THREE.ShaderLib['plaid'] = {
             #include <clipping_planes_fragment>
 
             // we want to increase the number of plaid pattern repitions and provide a tweak so that the scroll offset makes the lines align when it hits 100%
-            vec2 vUvD = vec2(vUv.x * 30.0, vUv.y * 30.0 * (1.0 - verticalOffset));
+            vec2 vUvD = vec2(vUv.x * 30.0, vUv.y * 30.0);
 
             // get the pixel color for each plaid direction
             vec4 line_one_texel = getLineOneTexel(vUvD, verticalOffset);

@@ -1,0 +1,25 @@
+{
+  "name": "johndavidfive",
+  "version": "1.0.0",
+  "description": "John David Martin ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitsome/johndavidfive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitsome/johndavidfive/issues"
+  },
+  "homepage": "https://github.com/gitsome/johndavidfive#readme",
+  "dependencies": {
+    "gulp-htmlmin": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

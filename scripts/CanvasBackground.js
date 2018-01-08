@@ -33,11 +33,11 @@ var CanvasBackground;
 
         var cameraZScale = d3.scaleLinear()
             .domain([0, 0.5, 1])
-            .range([60, 60 + 150, 80]);
+            .range([50, 120, 50]);
 
         var boxRotationXScale = d3.scaleLinear()
             .domain([0, 0.5, 1])
-            .range([0, -Math.PI / 8, 0]);
+            .range([0, -Math.PI / 8, -Math.PI / 4]);
 
         var doRender = function () {
             renderer.render(scene, camera);
@@ -54,8 +54,8 @@ var CanvasBackground;
 
             // easing maps 0-1 percentage into transformed 0-1 percentage
             // then this new eased percentage passed to appropriate scale method defined above
-            plaidSphere.rotation.x = boxRotationXScale(d3.easeCubicInOut(vertPercentScrolled));
-            camera.position.z = cameraZScale(d3.easeCubicInOut(vertPercentScrolled));
+            plaidSphere.rotation.x = boxRotationXScale(vertPercentScrolled);
+            camera.position.z = cameraZScale(vertPercentScrolled);
 
             // a point light that is white will stay with the camera
             // this will create nice gradient background when the sphere is close to the camera
@@ -117,12 +117,12 @@ var CanvasBackground;
 
             // accent point light one
             var pointLightOne = new THREE.PointLight(0x0088FF, 1.0, 60);
-            pointLightOne.position.set(30, 18, 12);
+            pointLightOne.position.set(30, 12, 12);
             scene.add(pointLightOne);
 
             // accent point light two
             var pointLightTwo = new THREE.PointLight(0x00FF88, 1.0, 60);
-            pointLightTwo.position.set(-30, 18, 12);
+            pointLightTwo.position.set(-30, 12, 12);
             scene.add(pointLightTwo);
 
             var sphereGeometry = new THREE.SphereGeometry(12, 40, 40);
