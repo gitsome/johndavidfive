@@ -33,7 +33,7 @@ var CanvasBackground;
 
         var cameraZScale = d3.scaleLinear()
             .domain([0, 0.5, 1])
-            .range([50, 120, 50]);
+            .range([50, 130, 50]);
 
         var boxRotationXScale = d3.scaleLinear()
             .domain([0, 0.5, 1])
@@ -88,7 +88,7 @@ var CanvasBackground;
             camera.lookAt(new THREE.Vector3(0,0,0));
 
             $(renderer.domElement).attr('style', 'position: fixed; top: 0; left: 0; width: 100%; height: 100%;');
-            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setSize(window.innerWidth, window.innerHeight);
 
             totalHeight = $('body').height();
             totalWidth = $('body').width();

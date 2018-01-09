@@ -52,7 +52,7 @@ var CanvasBackground;
 
         var windowHeight;
 
-        var cameraZScale = d3.scaleLinear().domain([0, 0.5, 1]).range([50, 120, 50]);
+        var cameraZScale = d3.scaleLinear().domain([0, 0.5, 1]).range([50, 130, 50]);
 
         var boxRotationXScale = d3.scaleLinear().domain([0, 0.5, 1]).range([0, -Math.PI / 8, -Math.PI / 4]);
 
