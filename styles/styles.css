@@ -538,12 +538,13 @@ a.project {
     position: relative;
 }
 .public-presentation {
+    position: relative;
     margin-bottom: 45px;
 }
 .public-presentation-icon {
     position: absolute;
     top: 3px;
-    left: 15px;
+    left: 0px;
 }
 .public-presentation-icon i {
     font-size: 50px;
