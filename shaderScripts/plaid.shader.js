@@ -233,7 +233,7 @@ THREE.ShaderLib['plaid'] = {
             #include <alphatest_fragment>
             #include <specularmap_fragment>
 
-            specularStrength = (0.1 * diffuseColor.r + 0.8 * diffuseColor.g + 0.1 * diffuseColor.b);
+            specularStrength = 0.4 + 0.6 * (diffuseColor.r + diffuseColor.g + diffuseColor.b) / 3.0;
 
             #include <normal_fragment>
             #include <emissivemap_fragment>

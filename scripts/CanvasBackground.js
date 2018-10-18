@@ -22,6 +22,8 @@ var CanvasBackground;
         var plaidMaterial;
         var plaidSphere;
         var cameraPoinLight;
+        var pointLightOne;
+        var pointLightTwo;
 
         // our magic vertical offset used to animate the background
         var verticalOffset;
@@ -30,6 +32,9 @@ var CanvasBackground;
         var totalHeight;
 
         var windowHeight;
+
+        var pointLightXOffset = 30;
+        var pointLightYOffset = 12;
 
         var cameraZScale = d3.scaleLinear()
             .domain([0, 0.5, 1])
@@ -93,6 +98,13 @@ var CanvasBackground;
             totalHeight = $('body').height();
             totalWidth = $('body').width();
 
+            pointLightXOffset = THREE.Math.mapLinear(totalWidth, 630, 2500, 4, 25);
+            pointLightYOffset = THREE.Math.mapLinear(totalWidth, 630, 2500, 2, 12);
+            pointLightTwo.position.set(-pointLightXOffset, pointLightYOffset, 13);
+            pointLightOne.position.set(pointLightXOffset, pointLightYOffset, 13);
+
+            console.log(pointLightXOffset);
+
             scrollPositionUpdated();
         };
 
@@ -116,13 +128,11 @@ var CanvasBackground;
             scene.add(cameraPoinLight);
 
             // accent point light one
-            var pointLightOne = new THREE.PointLight(0x0088FF, 1.0, 60);
-            pointLightOne.position.set(30, 12, 12);
+            pointLightOne = new THREE.PointLight(0x0088FF, 1.0, 60);
             scene.add(pointLightOne);
 
             // accent point light two
-            var pointLightTwo = new THREE.PointLight(0x00FF88, 1.0, 60);
-            pointLightTwo.position.set(-30, 12, 12);
+            pointLightTwo = new THREE.PointLight(0x00FF88, 1.0, 60);
             scene.add(pointLightTwo);
 
             var sphereGeometry = new THREE.SphereGeometry(12, 40, 40);
