@@ -98,12 +98,11 @@ var CanvasBackground;
             totalHeight = $('body').height();
             totalWidth = $('body').width();
 
-            pointLightXOffset = THREE.Math.mapLinear(totalWidth, 630, 2500, 4, 25);
+            pointLightXOffset = THREE.Math.mapLinear(totalWidth, 630, 2500, 7, 25);
             pointLightYOffset = THREE.Math.mapLinear(totalWidth, 630, 2500, 2, 12);
+
             pointLightTwo.position.set(-pointLightXOffset, pointLightYOffset, 13);
             pointLightOne.position.set(pointLightXOffset, pointLightYOffset, 13);
-
-            console.log(pointLightXOffset);
 
             scrollPositionUpdated();
         };
