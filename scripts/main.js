@@ -32,7 +32,11 @@ var main = {};
 
         // back to top on mobile
         $('.back-to-top').click(function () {
-            scrollTo(0, 0);
+            window.scroll({
+                top: 0, 
+                left: 0,
+                behavior: 'smooth'
+            });
         });
 
         // animated navigation to clicked section

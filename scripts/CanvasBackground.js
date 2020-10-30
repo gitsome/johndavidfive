@@ -134,7 +134,7 @@ var CanvasBackground;
             pointLightTwo = new THREE.PointLight(0x00FF88, 1.0, 60);
             scene.add(pointLightTwo);
 
-            var sphereGeometry = new THREE.SphereGeometry(12, 40, 40);
+            var sphereGeometry = new THREE.SphereGeometry(18, 80, 80);
 
             var plaidUniforms = THREE.ShaderLib["plaid"].uniforms;
 

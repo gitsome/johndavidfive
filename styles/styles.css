@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -113,10 +114,11 @@ body > canvas {
 
 
 h1 {
-    font-size: 400%;
     font-weight: 300;
-    text-transform: uppercase;
+    font-size: 500%;
     letter-spacing: 9px;
+    text-transform: uppercase;
+
     margin-top: 0px;
     margin-bottom: 15px;
     color: rgba(255, 255, 255, 1.0);
@@ -135,7 +137,7 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 7.2px;
     margin-bottom: 30px;
-    font-size: 250%;
+    font-size: 325%;
     color: #00ff90;
 }
 
@@ -476,7 +478,7 @@ a.project {
 .skill-set-group h4 {
     text-transform: uppercase;
     color: #fff;
-    font-size: 135%;
+    font-size: 200%;
 }
 .skill-set-groups-frontend {
     text-align: left;
@@ -526,7 +528,7 @@ a.project {
 }
 .skill-set-groups-backend .skills-list-skill-bar-wrapper {
     border-radius: 10px 0px 0px 10px;
-    background: rgba(51, 122, 183, 0.3);
+    background: rgba(51, 122, 183, 0.35);
 }
 .skill-set-groups-backend .skills-list-skill .title {
     text-align: left;
@@ -662,14 +664,16 @@ footer a:active {
         padding: 45px 0 15px 0;
     }
     h1 {
-        font-size: 300%;
+        font-size: 400%;
     }
     h2 {
         font-size: 150%;
         margin-top: 15px;
     }
     h3 {
-        font-size: 150%;
+        font-size: 175%;
+        letter-spacing: 4px;
+        font-weight: 700;
     }
 
     .back-to-top.back-to-top-active {
@@ -708,14 +712,24 @@ footer a:active {
     }
 
     .contact {
-        width: 90px;
+        width: 70px;
         margin-left: 5px;
         margin-right: 5px;
         margin-top: 15px;
     }
+    .contact-icon-holder {
+        height: 42px;
+    }
     .contact-text {
         display: none;
     }
+
+    .fa.contact-icon {
+        font-size: 30px;
+        margin-left: -15px;
+    }
+
+
     .disply-block-sm {
         display: block;
     }
@@ -724,8 +738,8 @@ footer a:active {
     }
 
     .project-title-details {
-        padding: 45px 45px;
-        font-size: 100%;
+        padding: 45px;
+        font-size: 125%;
     }
 
     .public-presentation-title {

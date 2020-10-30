@@ -1,25 +1,25 @@
-var gulp = require('gulp');
-var htmlmin = require('gulp-htmlmin');
-var csso = require('gulp-csso');
+const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
+const csso = require('gulp-csso');
 
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
 
-gulp.task('html', function(){
+const task_html = () => {
     return gulp.src(['templates/home.html'])
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('.'))
-});
+};
 
-gulp.task('css', function () {
+const task_css = () => {
     return gulp.src('styles/styles.css')
-    .pipe(csso({}))
-    .pipe(gulp.dest('.'));
-});
+        .pipe(csso({}))
+        .pipe(gulp.dest('.'));
+};
 
-gulp.task('js', function () {
+const task_js = () => {
     return gulp.src(
         [
             'shaderScripts/plaid.shader.js',
@@ -36,6 +36,6 @@ gulp.task('js', function () {
     .pipe(rename('johndavidfive.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('.'));
-});
+};
 
-gulp.task('default', ['css', 'html', 'js']);
+exports.default = gulp.series(task_css, task_html, task_js);
