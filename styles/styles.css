@@ -103,7 +103,7 @@ body > canvas {
     background: url(../resources/images/profile.jpg);
     background-repeat: no-repeat;
     background-size: 220px;
-    background-position: right -29px bottom -70px;
+    background-position: right -18px bottom -18px;
     border: 10px solid rgba(255,255,255, 0.5);
     margin-top: 16px;
 }
